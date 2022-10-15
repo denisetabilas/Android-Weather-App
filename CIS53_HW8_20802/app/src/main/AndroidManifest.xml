@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.deanza.cis53.weather.app" >
+
+    <!-- This permission is necessary in order for weather to perform network access. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="edu.deanza.cis53.weather.app.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="edu.deanza.cis53.weather.app.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName="edu.deanza.cis53.weather.app.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.deanza.cis53.weather.app.MainActivity" />
+        </activity>
+        <activity
+            android:name="edu.deanza.cis53.weather.app.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="edu.deanza.cis53.weather.app.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.deanza.cis53.weather.app.MainActivity" />
+        </activity>
+        <provider
+            android:authorities="edu.deanza.cis53.weather.app"
+            android:name="edu.deanza.cis53.weather.app.data.WeatherProvider" />
+    </application>
+
+</manifest>

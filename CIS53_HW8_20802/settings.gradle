@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "CIS53_HW8_20802"
